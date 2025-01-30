@@ -6,7 +6,7 @@
 
 body {
   background-color: rgb(10, 10, 45);
-  color: #333;
+  color: antiquewhite;
 }
 
 main {
@@ -14,7 +14,7 @@ main {
   margin: auto;
   margin-top: 30px;
   padding: 20px;
-  background-color: antiquewhite;
+  background-color: rgba(0, 0, 0, 0.416);
   border-radius: 5px;
 }
 
@@ -23,16 +23,34 @@ h1 {
   margin-bottom: 20px;
   border: 2px double rgb(10, 10, 45);
   text-transform: uppercase;
-  padding-left: 5px;
+  padding: 15px;
+  background-color: rgba(50, 50, 94, 0.653);
 }
 
 #inputdiv {
   border-bottom: 2px double rgb(10, 10, 45);
   padding-bottom: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+#headdiv,
+#articleflex {
+  background-color: rgba(28, 28, 54, 0.66);
+  padding: 20px;
+  border: solid 2px rgb(79, 79, 103);
+}
+
+input {
+  background-color: rgba(50, 50, 94, 0.653);
+  border: none;
+  padding: 5px;
+  margin-left: 10px;
+  color: antiquewhite;
 }
 
 button {
-  background-color: rgb(10, 10, 45);
+  background-color: rgba(50, 50, 94, 0.653);
   color: antiquewhite;
   padding: 5px;
   border-radius: 2px;
@@ -41,16 +59,34 @@ button {
 }
 
 #imgs {
-  padding-top: 20px;
-  display: flex;
+  background-color: rgba(28, 28, 54, 0.66);
+  padding: 20px;
   justify-content: space-between;
+  display: none;
 }
 
 #imgs img {
   width: 30%;
+  height: 250px;
+  border: solid 2px rgb(79, 79, 103);
 }
 
 h2 {
   padding: 20px;
   text-align: center;
+  background-color: rgba(50, 50, 94, 0.653);
+  width: 100%;
+  border-bottom: 2px solid rgb(79, 79, 103);
+  margin-bottom: 10px;
+}
+
+#articleflex {
+  display: none;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.backgroundcontainer {
+  background-color: rgb(79, 79, 103);
 }

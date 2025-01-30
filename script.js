@@ -115,6 +115,8 @@ async function fetchSights(city) {
         <hr>
         `;
         attractionsBox.appendChild(poiElement);
+        const articleFlex = document.getElementById("articleflex");
+        articleFlex.style.display = "flex";
       }
     }
 
@@ -177,6 +179,7 @@ async function fetchImages(city) {
         return `<img src="${pic.src.medium}" alt="${pic.alt}">`;
       })
       .join("");
+    imgBox.style.display = "flex";
   } catch (error) {
     console.error(`Error fetching images:`, error);
   }
