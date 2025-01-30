@@ -1,8 +1,3 @@
-import { createClient } from "pexels";
-const client = createClient(
-  "z4Uya3d1JQCDBHUIO06mvA5bh1YrWExKwY65AMJx1eU3dL96bSPu9d0a"
-);
-
 const destinationInput = document.getElementById("destination");
 const searchBtn = document.getElementById("search");
 const clearBtn = document.getElementById("clear");
@@ -163,17 +158,26 @@ async function fetchCoords(city) {
 }
 
 async function fetchImages(city) {
+  const apiKey = "z4Uya3d1JQCDBHUIO06mvA5bh1YrWExKwY65AMJx1eU3dL96bSPu9d0a";
   const query = city;
   const imgBox = document.getElementById("imgs");
+  const url = `https://api.pexels.com/v1/search?query=${query}&per_page=3`;
 
   try {
-    const response = await client.photos.search({ query, per_page: 3 });
-    imgBox.innerHTML = response.photos
+    const response = await fetch(url, {
+      headers: {
+        Authorization: apiKey,
+      },
+    });
+
+    const data = await response.json();
+
+    imgBox.innerHTML = data.photos
       .map((pic) => {
-        return `<img src="${pic.src.medium}">`;
+        return `<img src="${pic.src.medium}" alt="${pic.alt}">`;
       })
       .join("");
   } catch (error) {
-    console.log(`error`, error);
+    console.error(`Error fetching images:`, error);
   }
 }
