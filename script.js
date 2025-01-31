@@ -31,7 +31,7 @@ async function fetchWeather(city) {
   const weatherBox = document.createElement("div");
   weatherArticle.appendChild(weatherBox);
 
-  weatherBox.innerHTML = "";
+  weatherArticle.innerHTML = "";
 
   try {
     const { lat, lng } = await fetchCoords(city);
