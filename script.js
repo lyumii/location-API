@@ -28,10 +28,10 @@ async function fetchAll(city) {
 
 async function fetchWeather(city) {
   const weatherArticle = document.getElementById("weather");
+  weatherArticle.innerHTML = "";
   const weatherBox = document.createElement("div");
   weatherArticle.appendChild(weatherBox);
-
-  weatherArticle.innerHTML = "";
+  weatherBox.innerHTML = "";
 
   try {
     const { lat, lng } = await fetchCoords(city);
